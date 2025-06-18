@@ -12,16 +12,16 @@ def table_platges_cat_beach(url):
 
     relevant_fields = {
     'scrape_time': pd.Timestamp.now(),
-    'page_date': response['estadoPlaya']['fecha'],
-    'page_hour': response['estadoPlaya']['hora'],
-    'bay_id': response['playa']['id'],
-    'bay_name': response['playa']['nombre'],
-    'lat': response['playa']['coordenadasPC'][0]['coordenaday'],
-    'lon': response['playa']['coordenadasPC'][0]['coordenadax'],
-    'jellyfish_lab': response['medusas']['peligrosidadTrad'],
-    'jellyfish_lab2': response['medusas']['peligrosidadEtiqueta'],
-    'jellyfish_icon': response['medusas']['icono'],
-    'jellyfish_list': [response['medusas']['llistatMeduses']]
+    'page_date': response['items']['estadoPlaya']['fecha'],
+    'page_hour': response['items']['estadoPlaya']['hora'],
+    'bay_id': response['items']['playa']['id'],
+    'bay_name': response['items']['playa']['nombre'],
+    'lat': response['items']['playa']['coordenadasPC'][0]['coordenaday'],
+    'lon': responsev['playa']['coordenadasPC'][0]['coordenadax'],
+    'jellyfish_lab': response['items']['medusas']['peligrosidadTrad'],
+    'jellyfish_lab2': response['items']['medusas']['peligrosidadEtiqueta'],
+    'jellyfish_icon': response['items']['medusas']['icono'],
+    'jellyfish_list': [response['items']['medusas']['llistatMeduses']]
     }
 
     return pd.DataFrame(relevant_fields)
